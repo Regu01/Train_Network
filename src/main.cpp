@@ -1,19 +1,26 @@
 #include <Arduino.h>
 #include "relay_functions.h"
+#include "canton_functions.h"
 
 const int relayPins[] = {RELAY_PIN_1, RELAY_PIN_2, RELAY_PIN_3, RELAY_PIN_4};
+const int cantonPins[] = {CANTON_PIN_1, CANTON_PIN_2};
 
 void setup() {
   setupRelays();
+  setupCantons();
 
   Serial.begin(9600);
   Serial.println("Hello, World!");
 }
 
 void loop() {
+
+  int cantonStates[NUM_CANTONS];
+  readAllCantonStates(cantonStates);
+  delay(500);
+
   if (Serial.available() > 0) {
     char command = Serial.read();
-    delay(500);
 
     switch (command) {
       case 'q':
