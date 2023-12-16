@@ -15,6 +15,7 @@ void turnOnAllRelays();
 
 // Active un relais spécifique tout en éteignant les autres
 void activateRelay(int relayIndex);
+void activateTwoRelays(int relayIndex1, int relayIndex2);
 
 void activateSequentialRelays(int startRelayIndex);
 

@@ -9,5 +9,7 @@ extern const int cantonPins[];
 void setupCantons();
 int readCantonState(int cantonIndex);
 void readAllCantonStates(int* states);
+int readStableCantonStateWithMemory(int cantonIndex, int* lastState, int stabilityTime);
+
 
 #endif

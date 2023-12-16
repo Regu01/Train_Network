@@ -31,6 +31,19 @@ void activateRelay(int relayIndex) {
   Serial.println("---------------------");
 }
 
+void activateTwoRelays(int relayIndex1, int relayIndex2) {
+  Serial.println("---------------------");
+  turnOffAllRelays();  // Éteindre tous les relais avant d'activer les spécifiés
+  digitalWrite(relayPins[relayIndex1], LOW);
+  digitalWrite(relayPins[relayIndex2], LOW);
+  Serial.print("Relay ");
+  Serial.print(relayIndex1 + 1);
+  Serial.print(" and Relay ");
+  Serial.print(relayIndex2 + 1);
+  Serial.println(": ON");
+  Serial.println("---------------------");
+}
+
 void activateSequentialRelays(int startRelayIndex) {
   Serial.println("---------------------");
   

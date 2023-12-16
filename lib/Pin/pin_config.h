@@ -12,7 +12,9 @@
 //Cantons
 #define CANTON_PIN_1 D5
 #define CANTON_PIN_2 D6
+#define CANTON_PIN_3 D7
+#define CANTON_PIN_4 D8
 
-#define NUM_CANTONS 2
+#define NUM_CANTONS 4
 
 #endif
